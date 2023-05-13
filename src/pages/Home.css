@@ -1,0 +1,9 @@
+.home-container {
+  background-image: url(../assets/backgrounds/background0.svg);
+  background-repeat: no-repeat;
+  background-position: bottom;
+  background-size: 100vw auto;
+  height: 100vh;
+  max-height: 100vh;
+  width: auto;
+}

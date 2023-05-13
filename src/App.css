@@ -1,0 +1,36 @@
+.container {
+  height: 100vh;
+  overflow-y: scroll;
+  scroll-snap-type: y mandatory;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch; 
+}
+
+.page {
+  scroll-snap-align: start;
+  height: 100vh;
+}
+
+.title {
+  color: #43DD3E;
+  font-size: 16px;
+  margin: 0;
+}
+
+.line {
+  margin: 0;
+  padding: 0;
+  border-top: 1px solid #D9D9D9;
+}
+
+@media only screen and (min-width: 600px) {
+  .title {
+    font-size: 20px;
+  }
+}
+
+@media only screen and (min-width: 900px) {
+  .title {
+    font-size: 36px;
+  }
+}

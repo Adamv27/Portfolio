@@ -1,0 +1,16 @@
+.projects-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  padding-top: 20px;
+}
+
+.card-container {
+  margin-top: 25px;
+
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}

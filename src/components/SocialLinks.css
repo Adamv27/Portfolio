@@ -1,0 +1,22 @@
+#social-links {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  transform: scale(0.5);
+}
+
+.link {
+  margin: 25px;
+}
+
+.link:hover .logo {
+  filter: invert(20%)
+}
