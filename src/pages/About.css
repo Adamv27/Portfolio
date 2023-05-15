@@ -33,7 +33,6 @@
 
 @media only screen and (min-width: 400px) {
   .text-box {
-    margin-top: 10vh;
     max-width: 65vw;
   }
 }
