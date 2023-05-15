@@ -1,0 +1,44 @@
+.nav-link {
+  color: white;
+  text-decoration: none;
+  font-size: 1.5rem;
+
+  padding: 10px;
+
+  user-select: none;
+  
+  margin-top: 1em;
+}
+
+.nav-link:hover {
+  color: #44DD3E;
+}
+
+.nav-container > a {
+  font-weight: bold;
+}
+
+.nav-link.home {
+  position: absolute;
+  left: -3vw;
+  top: 0;
+  margin-top: -50px;
+  margin-left: -25px;
+  transform: scale(0.5) translate(0, 0);
+  z-index: 999;
+}
+
+.nav-link.first {
+  padding-left: 2em;
+}
+
+.nav-container {
+  display: flex;
+  justify-content: center;
+}
+
+@media only screen and (min-width: 400px) {
+  .nav-link.home {
+    left: 0;
+  }
+}

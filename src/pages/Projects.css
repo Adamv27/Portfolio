@@ -1,0 +1,26 @@
+.projects-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    height: 100vh;
+
+    padding-top: 8vh;
+}
+  
+.card-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+
+    overflow: hidden;
+}
+
+@media only screen and (min-width: 600px) {
+  .projects-container {
+    padding-top: 2vh;
+  }
+}
+
+
