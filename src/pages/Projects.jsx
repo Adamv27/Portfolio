@@ -47,8 +47,8 @@ function Projects() {
             image={BlackJackImage}
             tags={["Python"]}
             title="BlackJack"
-            srcLink="https://github.com/Adamv27/Minesweeper-JS"
-            desc="Classic game of Minesweeper made in vanilla JavaScript. Implements long touch library to allow mobile play."
+            srcLink="https://github.com/Adamv27/Blackjack"
+            desc="The game blackjack built with the Pygame library. Inplemented custom drag and drop mechanics for chips."
           />
         </CarouselItem>
       </Carousel>
