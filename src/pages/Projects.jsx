@@ -57,25 +57,3 @@ function Projects() {
 }
 
 export default Projects
-
-/*
-      <div className='card-container'>
-        <ProjectCard 
-          image={SentryImage}
-          tags={["Java", "SQLite3"]}
-          title="Sentry"
-          srcLink="https://github.com/Adamv27/Sentry"
-        />
-        <ProjectCard 
-          image={StockImage}
-          tags={["JavaScript"]}
-          title="Stock Viewer"
-        />
-        <ProjectCard 
-          image = {MinesweeperImage}
-          tags={["JavaScript"]}
-          title="Minesweeper"
-        />
-      </div>
-*/
-

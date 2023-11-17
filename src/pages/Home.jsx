@@ -1,31 +1,26 @@
 import React from 'react'
-
 import NavBar from '../components/NavBar'
 import ComputerGraphic from '../assets/computer-image.svg'
 
 import './Home.css'
 
-function Home(props) {
-  const scrollToSnapPoint = (snapPointRef) => {
-    snapPointRef.current.scrollIntoView({ behavior: 'smooth'})
-  }
-
+const Home = props => {
   return (
-    <div className='home-container'>
+    <div class='home-container'>
       <NavBar
         home={props.homeSnapPoint}
         about={props.aboutSnapPoint}
         projects={props.projectsSnapPoint}
         contact={props.contactSnapPoint}
       />
-      <div className='home-content'>
-        <div className='text-container'>
-          <p className='home-text'>Hi, I am</p>
-          <h1 className='home-title'>Adam Vinch</h1>
-          <p className='home-text bottom'>Software Developer</p>
-          <a className='contact-link' onClick={() => scrollToSnapPoint(props.contactSnapPoint)}>Contact Me</a>
+      <div class='home-content'>
+        <div class='text-container'>
+          <p class='home-text'>Hi, I am</p>
+          <h1 class='home-title'>Adam Vinch</h1>
+          <p class='home-text bottom'>Software Developer</p>
+          <a class='contact-link' onClick={() => scrollToSnapPoint(props.contactSnapPoint)}>Contact Me</a>
         </div>
-        <img className='computer-image' src={ComputerGraphic} alt='Computer Graphic'/>
+        <img class='computer-image' src={ComputerGraphic} alt='Computer Graphic'/>
       </div>
     </div>
   )

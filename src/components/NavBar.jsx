@@ -12,13 +12,13 @@ function NavBar({home, about, projects, contact}) {
   }
 
   return (
-    <div className='nav-container'>
-      <a className='nav-link home ' onClick={() => scrollToSnapPoint(home)}>
+    <div class='nav-container'>
+      <a class='nav-link home'>
         <img src={Logo}></img>
       </a>
-      <a className='nav-link first' onClick={() => scrollToSnapPoint(about)}>About</a>
-      <a className='nav-link' onClick={() => scrollToSnapPoint(projects)}>Projects</a>
-      <a className='nav-link' onClick={() => scrollToSnapPoint(contact)}>Contact</a>
+      <a class='nav-link first'>About</a>
+      <a class='nav-link'>Projects</a>
+      <a class='nav-link'>Contact</a>
     </div>
   )
 }
