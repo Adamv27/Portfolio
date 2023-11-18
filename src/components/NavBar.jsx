@@ -1,4 +1,3 @@
-import React from 'react'
 import { Link } from "react-router-dom";
 
 import Logo from '../assets/logo.svg'
@@ -9,11 +8,11 @@ function NavBar() {
   return (
     <nav className='nav-container'>
       <Link to="/">
-        <img src={Logo}></img>
+        <img className="logo" src={Logo}></img>
       </Link>
-      <Link to="/about">About</Link>
-      <Link to="/projects">Projects</Link>
-      <Link to="/contact">Contact</Link>
+      <Link className="nav-link" to="/about">About</Link>
+      <Link className="nav-link" to="/projects">Projects</Link>
+      <Link className="nav-link" to="/contact">Contact</Link>
     </nav>
   )
 }
