@@ -1,5 +1,4 @@
-import React from 'react'
-
+import NavBar from '../components/NavBar'
 import ProjectCard from '../components/ProjectCard'
 import Carousel, { CarouselItem } from '../components/Carousel'
 import './Projects.css'
@@ -9,14 +8,15 @@ import StockImage from '../assets/projects/stock-viewer.png'
 import MinesweeperImage from '../assets/projects/minesweeper.png'
 import BlackJackImage from '../assets/projects/blackjack.png'
 
-function Projects() {
+const Projects = () => {
   return (
     <div className='projects-container'>
+      <NavBar />
       <h1 className='title'>Projects</h1>
-      <div className='line' style={{width: '40%'}}></div>
+      <div className='line' style={{ width: '40%' }}></div>
       <Carousel>
         <CarouselItem>
-          <ProjectCard 
+          <ProjectCard
             image={SentryImage}
             tags={["Java", "SQLite3", "Swing"]}
             title="Sentry"
@@ -25,7 +25,7 @@ function Projects() {
           />
         </CarouselItem>
         <CarouselItem>
-          <ProjectCard 
+          <ProjectCard
             image={StockImage}
             tags={["JavaScript"]}
             title="Stock Viewer"
@@ -34,7 +34,7 @@ function Projects() {
           />
         </CarouselItem>
         <CarouselItem>
-          <ProjectCard 
+          <ProjectCard
             image={MinesweeperImage}
             tags={["JavaScript"]}
             title="Minesweeper"
@@ -43,7 +43,7 @@ function Projects() {
           />
         </CarouselItem>
         <CarouselItem>
-          <ProjectCard 
+          <ProjectCard
             image={BlackJackImage}
             tags={["Python"]}
             title="BlackJack"
@@ -52,7 +52,7 @@ function Projects() {
           />
         </CarouselItem>
       </Carousel>
-    </div> 
+    </div>
   )
 }
 

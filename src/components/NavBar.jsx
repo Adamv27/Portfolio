@@ -8,9 +8,9 @@ import './NavBar.css'
 function NavBar() {
   return (
     <nav className='nav-container'>
-      <a className='nav-link home'>
+      <Link to="/">
         <img src={Logo}></img>
-      </a>
+      </Link>
       <Link to="/about">About</Link>
       <Link to="/projects">Projects</Link>
       <Link to="/contact">Contact</Link>

@@ -13,7 +13,7 @@ import Contact from "./pages/Contact";
 import './App.css'
 
 
-function App() {
+const App = () => {
   return (
     <div className="container">
       <Router>
@@ -21,6 +21,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/projects" element={<Projects />} />
+          <Route path="/contact" element={<Contact />} />
         </Routes>
       </Router>
     </div>
