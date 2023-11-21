@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { Link } from "react-router-dom";
 
+import MenuIcon from './MenuIcon'
 import Logo from '../assets/logo.svg'
-import Menu from '../assets/menu-icon.svg'
 
 import './NavBar.css'
 
@@ -24,11 +24,9 @@ const NavBar = () => {
 
   return (
     <nav className='nav-container'>
-      <img 
-        className="menu-icon" 
-        src={Menu}
-        onClick={toggleMenu}>
-      </img>
+      <div onClick={toggleMenu}>
+        <MenuIcon isOpen={menuOpen}/>
+      </div>
 
       <ul style={{display: menuOpen ? 'inline':'none'}}>
         <li><Link className="nav-link" to="/about">About</Link></li>
