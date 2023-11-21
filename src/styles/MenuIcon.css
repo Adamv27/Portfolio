@@ -1,7 +1,7 @@
 .line {
-  margin: 0.75rem;
-  width: 3.25rem;
-  height: 0.3rem;
+  margin: 0.35rem;
+  width: 2.25rem;
+  height: 0.25rem;
   background-color: white;
   border-radius: 16px;
 
@@ -11,7 +11,7 @@
 .top.open {
   position: absolute;
   transform: rotate(45deg);
-  top: 1rem;
+  top: 1.5rem;
 }
 
 .middle.open {
