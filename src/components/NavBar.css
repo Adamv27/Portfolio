@@ -1,29 +1,31 @@
 .nav-container {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+}
+
+.menu-icon {
+  width: 4rem;
+}
+
+.nav-container ul {
+  background-color: grey;
+  list-style-type: none;
 }
 
 .nav-link {
+  font-weight: bold;
+  margin: 1rem;
   color: white;
   text-decoration: none;
-  font-size: 1.5rem;
-  font-weight: bold;
-  padding: 10px;
-
-  user-select: none;
-
-  margin-top: 1em;
 }
 
-.nav-link:hover {
-  color: #44DD3E;
-}
 
-.logo {
-  position: absolute;
-  width: 2.5rem;
-  height: 2.5rem;
+@media (min-width: 767px) {
+  .menu-icon {
+    display: none;
+  }
 
-  left: 1rem;
-  top: 1rem;
+  .nav-container ul {
+    display: flex !important;
+  }
 }
