@@ -1,7 +1,7 @@
 import NavBar from '../components/NavBar'
 import Skills from '../components/Skills'
 
-import './About.css'
+import '../styles/About.css'
 
 
 const About = () => {

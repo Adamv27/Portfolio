@@ -1,7 +1,7 @@
 import NavBar from '../components/NavBar'
 import ProjectCard from '../components/ProjectCard'
 import Carousel, { CarouselItem } from '../components/Carousel'
-import './Projects.css'
+import '../styles/Projects.css'
 
 import SentryImage from '../assets/projects/sentry.png'
 import StockImage from '../assets/projects/stock-viewer.png'
