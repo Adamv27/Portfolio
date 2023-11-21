@@ -4,6 +4,7 @@ import Logo from '../assets/logo.svg'
 import './NavBar.css'
 
 
+<<<<<<< Updated upstream
 function NavBar() {
   return (
     <nav className='nav-container'>
@@ -14,6 +15,18 @@ function NavBar() {
       <Link className="nav-link" to="/projects">Projects</Link>
       <Link className="nav-link" to="/contact">Contact</Link>
     </nav>
+=======
+const NavBar = () => {
+  return (
+    <div className='nav-container'>
+      <a className='nav-link home'>
+        <img src={Logo}></img>
+      </a>
+      <a className='nav-link first'>About</a>
+      <a className='nav-link'>Projects</a>
+      <a className='nav-link'>Contact</a>
+    </div>
+>>>>>>> Stashed changes
   )
 }
 
