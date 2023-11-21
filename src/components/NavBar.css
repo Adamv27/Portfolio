@@ -3,13 +3,13 @@
   flex-direction: column;
 }
 
-.menu-icon {
-  width: 4rem;
+.nav-container.open {
+  background-color: grey;
 }
 
 .nav-container ul {
-  background-color: grey;
   list-style-type: none;
+  padding: 2rem;
 }
 
 .nav-link {
@@ -23,6 +23,10 @@
 @media (min-width: 767px) {
   .menu-icon {
     display: none;
+  }
+
+  .nav-container {
+    background-color: var(--bg-dark) !important;
   }
 
   .nav-container ul {

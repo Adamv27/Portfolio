@@ -23,8 +23,8 @@ const NavBar = () => {
 
 
   return (
-    <nav className='nav-container'>
-      <div onClick={toggleMenu}>
+    <nav className={`nav-container ${menuOpen ? 'open' : ''}`}>
+      <div className='menu-icon' onClick={toggleMenu}>
         <MenuIcon isOpen={menuOpen}/>
       </div>
 
@@ -33,8 +33,6 @@ const NavBar = () => {
         <li><Link className="nav-link" to="/projects">Projects</Link></li>
         <li><Link className="nav-link" to="/contact">Contact</Link></li>
       </ul>
-
-
       
     </nav>
   )

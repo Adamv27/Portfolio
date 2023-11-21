@@ -1,14 +1,14 @@
-import React, {useState} from "react"
 
 import '../styles/MenuIcon.css'
 
-const MenuIcon = isOpen => {
+const MenuIcon = ({ isOpen }) => {
+
   return (
-    <div className='menu-icon'>
-      <div className='menu-line'></div>
-      <div className='menu-line'></div>
-      <div className='menu-line'></div>
-    </div>
+    <>
+      <div className={`line top ${isOpen ? 'open' : ''}`}></div>
+      <div className={`line middle ${isOpen ? 'open' : ''}`}></div>
+      <div className={`line bottom ${isOpen ? 'open' : ''}`}></div>
+    </>
   )
 }
 
