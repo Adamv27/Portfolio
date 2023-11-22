@@ -1,8 +1,15 @@
 .menu-icon {
+  position: absolute;
+  top: 0;
   margin: 0.5rem;
+  width: fit-content;
 }
 
 .nav-container {
+  position: absolute;
+  top: 0;
+  width: 100vw;
+  z-index: 99;
   display: flex;
   flex-direction: column;
 }

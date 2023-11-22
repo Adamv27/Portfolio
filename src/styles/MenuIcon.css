@@ -11,7 +11,7 @@
 .top.open {
   position: absolute;
   transform: rotate(45deg);
-  top: 1.5rem;
+  top: 1rem;
 }
 
 .middle.open {
