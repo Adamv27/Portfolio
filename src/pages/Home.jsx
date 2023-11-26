@@ -10,9 +10,9 @@ const Home = () => {
       <div className='home-content'>
         <div className='text-container'>
           <p className='home-text'>Hi, I am</p>
-          <h1 className='home-text title'>Adam Vinch</h1>
+          <h1 className='title'>Adam Vinch</h1>
           <p className='home-text bottom'>Software Developer</p>
-          <a className='contact-link'>Contact Me</a>
+          <button className='resume-button'>My Resume</button>
         </div>
         <img className='computer-image' src={ComputerGraphic} alt='Computer Graphic' />
       </div>
