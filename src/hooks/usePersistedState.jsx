@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 
 export default function usePersistedState(key, defaultValue) {
   const [state, setState] = useState(() => {
-    console.log(JSON.parse(localStorage.getItem("darkmode")));
     return JSON.parse(localStorage.getItem(key)) || defaultValue;
   });
 

@@ -14,8 +14,8 @@ import { ThemeProvider } from "./hooks/useThemeContext";
 const App = () => {
   return (
     <ThemeProvider>
-      <NavBar />
       <Router>
+        <NavBar />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
