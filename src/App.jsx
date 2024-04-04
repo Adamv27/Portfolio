@@ -4,15 +4,17 @@ import {
   Route,
 } from "react-router-dom";
 
-
+import NavBar from './components/NavBar'
 import Home from './pages/Home'
 import About from "./pages/About"
 import Projects from "./pages/Projects";
 import Contact from "./pages/Contact";
+import { ThemeProvider } from "./hooks/useThemeContext";
 
 const App = () => {
   return (
-    <div className="container">
+    <ThemeProvider>
+      <NavBar />
       <Router>
         <Routes>
           <Route path="/" element={<Home />} />
@@ -21,7 +23,7 @@ const App = () => {
           <Route path="/contact" element={<Contact />} />
         </Routes>
       </Router>
-    </div>
+    </ThemeProvider>
   )
 }
 
