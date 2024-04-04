@@ -1,40 +1,30 @@
-import { useState } from 'react';
-import { Link } from "react-router-dom";
+import Container from 'react-bootstrap/Container';
+import Nav from 'react-bootstrap/Nav';
+import Navbar from 'react-bootstrap/Navbar';
+import Image from 'react-bootstrap/Image';
 
-import MenuIcon from './MenuIcon'
+import ThemeSwitch from '../components/ThemeSwitch';
 import Logo from '../assets/logo.svg'
 
-import './NavBar.css'
-
-
-
-
 const NavBar = () => {
-  const [menuOpen, setMenuOpen] = useState(false);
-
-  const toggleMenu = () => {
-    setMenuOpen(!menuOpen);
-  }
-
-  //  <Link to="/">
-  //    <img className="logo" src={Logo}></img>
-  //  </Link>
-
-
-
   return (
-    <nav className={`nav-container ${menuOpen ? 'open' : ''}`}>
-      <div className='menu-icon' onClick={toggleMenu}>
-        <MenuIcon isOpen={menuOpen} />
-      </div>
-
-      <ul style={{ display: menuOpen ? 'inline' : 'none' }}>
-        <li><Link className="nav-link" to="/about">About</Link></li>
-        <li><Link className="nav-link" to="/projects">Projects</Link></li>
-        <li><Link className="nav-link" to="/contact">Contact</Link></li>
-      </ul>
-
-    </nav>
+    <Navbar expand="lg">
+      <Container>
+        <Navbar.Brand href="/">
+          <Image src={Logo} thumbnail/>          
+        </Navbar.Brand>
+        <Navbar.Toggle aria-controls="basic-navbar-nav" />
+        <Navbar.Collapse id="basic-navbar-nav">
+          <Nav className="auto">
+            <Nav.Link href="/">Home</Nav.Link>
+            <Nav.Link href="/about">About</Nav.Link>
+            <Nav.Link href="/projects">Projects</Nav.Link>
+            <Nav.Link href="/contact">Contact</Nav.Link>
+          </Nav>
+        </Navbar.Collapse>
+        <ThemeSwitch />
+      </Container>
+    </Navbar> 
   )
 }
 

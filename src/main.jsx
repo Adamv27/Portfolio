@@ -1,12 +1,12 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import App from './App.jsx'
-import Temp from './Temp.jsx'
 
-import './styles/global.css'
+import 'bootstrap/dist/css/bootstrap.min.css';
+import './scss/bootstrap.scss'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <Temp />
+    <App />
   </React.StrictMode>
 )
