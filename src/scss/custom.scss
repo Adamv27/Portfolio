@@ -1,0 +1,17 @@
+$light-bg: #FFF;
+$light-text: #000;
+
+$dark-bg: #141416;
+$dark-text: #FFF;
+
+$theme-colors: (
+    "primary": #43DD3E
+);
+
+
+[data-bs-theme="light"] {
+    --bs-body-bg: #0000FF;
+}
+
+
+@import "../../node_modules/bootstrap/scss/bootstrap";

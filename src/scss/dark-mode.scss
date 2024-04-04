@@ -1,0 +1,51 @@
+html[darkmode] {
+  
+  // Generate dark palettes for theme colors.
+  $primary:       #44DD3E;
+  $secondary:     #5e7683;
+  $accent-1:      #2B2B30;
+  $accent-2:      #3C3C44;
+  $accent-3:      #61616B;
+
+  $theme-colors: (
+    "primary":    $primary,
+    "secondary":  $secondary,
+    "accent-1":   $accent-1,
+    "accent-2":   $accent-2,
+    "accent-3":   $accent-3,
+  );
+
+  @each $color, $value in $theme-colors {
+    --#{$variable-prefix}#{$color}: #{$value};
+  }
+  
+  $theme-colors-rgb: map-loop($theme-colors, to-rgb, "$value");
+
+  @each $color, $value in $theme-colors-rgb {
+    --#{$variable-prefix}#{$color}-rgb: #{$value};
+  }
+
+  // Simply switch background & text color
+  --#{$variable-prefix}body-color: #{$body-bg};
+  --#{$variable-prefix}body-bg: #{$body-color};
+
+  --#{$variable-prefix}body-color-rgb: #{to-rgb($body-bg)};
+  --#{$variable-prefix}body-bg-rgb: #{to-rgb($body-color)};
+  
+  --#{$variable-prefix}navbar-toggler-border-color: #FFF;
+
+  .navbar {
+    .navbar-brand,
+    .navbar-nav .nav-link {
+      color: var(--#{$variable-prefix}body-color);
+    }
+
+    .navbar-toggler {
+        border-color: transparent;
+    }
+
+    .navbar-toggler-icon {
+        background-image: url("../assets/menu-light.svg");
+    }
+  }
+}
