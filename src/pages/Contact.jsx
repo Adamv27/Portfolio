@@ -6,7 +6,7 @@ import FloatingLabel from "react-bootstrap/FloatingLabel";
 
 function Contact() {
 	return (
-    <div id="contact-page" className="d-flex align-items-center">
+    <div id="contact-page" className="d-flex justify-content-center">
       <Container id="contact-container">
         <Form
           action="https://api.web3forms.com/submit"

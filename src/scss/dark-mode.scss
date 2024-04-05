@@ -1,6 +1,7 @@
 html[darkmode] {
   // Generate dark palettes for theme colors.
-  $accent-1:      #3C3C44;
+  $accent-1: #2B2B30;
+  $accent-2: #3C3C44;
 
   $theme-colors: (
     "primary":    $primary,
@@ -56,5 +57,10 @@ html[darkmode] {
     background-color: $accent-1;
     padding: 2em;
     border-radius: 24px;
+
+    .form-control {
+        background-color: $accent-2;
+        border: none;
+    }
   }
 }

@@ -1,8 +1,5 @@
-#contact-page {
-    flex-grow: 1;
-}
-
 #contact-container {
+    margin: 8em 2em 0 2em;
     background-color: $accent-1;
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
     padding: 2em;
@@ -11,4 +8,11 @@
     legend {
         color: $primary;
     }
+}
+
+
+@include media-breakpoint-up(md) {
+    #contact-container {
+        max-width: 30em;
+    } 
 }
