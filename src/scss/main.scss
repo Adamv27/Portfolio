@@ -1,21 +1,20 @@
-$light-bg: #FFF;
-$light-text: #000;
+@import './variables.scss';
 
-$dark-bg: #141416;
-$dark-text: #FFF;
+@import "../../node_modules/bootstrap/scss/functions";
+@import '../../node_modules/bootstrap/scss/variables';
+@import "../../node_modules/bootstrap/scss/mixins";
 
-$primary: #43DD3E;
+@import "./dark-mode";
 
-$theme-colors: (
-    "primary": #43DD3E
-);
-
+@import '../../node_modules/bootstrap/scss/bootstrap';
 
 body {
     height: 100vh;
 }
 
 #root {
+    display: flex;
+    flex-direction: column;
     height: 100%;
 }
 
@@ -37,4 +36,5 @@ body {
 
 
 
-@import "../../node_modules/bootstrap/scss/bootstrap";
+@import './Home.scss';
+@import './Contact.scss';

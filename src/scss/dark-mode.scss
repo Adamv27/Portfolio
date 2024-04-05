@@ -1,18 +1,10 @@
 html[darkmode] {
-  
   // Generate dark palettes for theme colors.
-  $primary:       #44DD3E;
-  $secondary:     #5e7683;
-  $accent-1:      #2B2B30;
-  $accent-2:      #3C3C44;
-  $accent-3:      #61616B;
+  $accent-1:      #3C3C44;
 
   $theme-colors: (
     "primary":    $primary,
-    "secondary":  $secondary,
     "accent-1":   $accent-1,
-    "accent-2":   $accent-2,
-    "accent-3":   $accent-3,
   );
 
   @each $color, $value in $theme-colors {
@@ -24,16 +16,13 @@ html[darkmode] {
   @each $color, $value in $theme-colors-rgb {
     --#{$variable-prefix}#{$color}-rgb: #{$value};
   }
-
-  // Simply switch background & text color
+  
   --#{$variable-prefix}body-color: #{$body-bg};
   --#{$variable-prefix}body-bg: #{$body-color};
 
   --#{$variable-prefix}body-color-rgb: #{to-rgb($body-bg)};
   --#{$variable-prefix}body-bg-rgb: #{to-rgb($body-color)};
   
-  --#{$variable-prefix}navbar-toggler-border-color: #FFF;
-
   --bs-form-switch-bg: $primary;
 
   .navbar {
@@ -50,7 +39,6 @@ html[darkmode] {
                 background-image: url("../assets/close-nav-white.svg");
             }
         }
-
     }
 
     .navbar-toggler-icon {
@@ -62,5 +50,11 @@ html[darkmode] {
         background-color: $accent-3; 
         border: none;
         background-image: url("../assets/moon.svg");
+  }
+
+  #contact-container {
+    background-color: $accent-1;
+    padding: 2em;
+    border-radius: 24px;
   }
 }

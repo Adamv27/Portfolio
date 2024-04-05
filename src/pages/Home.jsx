@@ -3,7 +3,6 @@ import Button from 'react-bootstrap/Button';
 import Image from 'react-bootstrap/Image';
 import ComputerGraphic from '../assets/computer-image.svg'
 
-import '../scss/Home.scss'
 
 const Home = () => {
   return (
@@ -12,7 +11,7 @@ const Home = () => {
         <p className="home-text">Hi, I am</p>
         <h1 id="title" className="home-text">Adam Vinch</h1>
         <p className="home-text">Computer Science student and <br/>aspiring Software Developer</p>
-        <Button id="home-button">See my work</Button>    
+        <Button>See my work</Button>    
       </div>
       <div className="content">
         <Image id="graphic" src={ComputerGraphic} />
