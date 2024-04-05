@@ -3,7 +3,6 @@ import Button from 'react-bootstrap/Button';
 import Image from 'react-bootstrap/Image';
 import ComputerGraphic from '../assets/computer-image.svg'
 
-import '../styles/home.css'
 import '../scss/Home.scss'
 
 const Home = () => {
