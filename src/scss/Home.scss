@@ -1,20 +1,7 @@
 @import "custom";
 
-#graphic {
-    max-width: 15em;
-}
-
 .home-container {
     height: 75%;
-}
-
-.content {
-    margin-left: 5em;
-}
-
-.home-text {
-    margin: 0;
-    font-size: larger
 }
 
 #home-button {
@@ -22,20 +9,28 @@
     color: white;
 }
 
+.home-text {
+    margin: 0;
+    font-size: larger
+}
+
 #title {
     color: $primary;
     font-size: 4em;
 }
 
-body {
-    background-image: url("../assets/backgrounds/background0.svg");
-    background-repeat: no-repeat;
-    background-position: bottom;
-    background-size: 100% auto;
-}
 
-@include media-breakpoint-down(sm) {
+#graphic {
+    display: none;
+}
+    
+@include media-breakpoint-up(lg) {
     #graphic {
-        display: none;
+        display: inline;
+        max-width: 15em;
+    }
+    
+    .content {
+        margin-left: 5em;
     }
 }
