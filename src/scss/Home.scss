@@ -1,0 +1,41 @@
+@import "custom";
+
+#graphic {
+    max-width: 15em;
+}
+
+.home-container {
+    height: 75%;
+}
+
+.content {
+    margin-left: 5em;
+}
+
+.home-text {
+    margin: 0;
+    font-size: larger
+}
+
+#home-button {
+    margin-top: 1em;
+    color: white;
+}
+
+#title {
+    color: $primary;
+    font-size: 4em;
+}
+
+body {
+    background-image: url("../assets/backgrounds/background0.svg");
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-size: 100% auto;
+}
+
+@include media-breakpoint-down(sm) {
+    #graphic {
+        display: none;
+    }
+}
