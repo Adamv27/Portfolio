@@ -13,9 +13,21 @@ $theme-colors: (
   "accent-2":   $accent-2,
   "accent-3":   $accent-3,
   "light":      $light,
-  "dark":       $dark
+  "dark":       $dark,
+  "python": #E6C75D,
+  "java": #B08BBB,
+  "javascript": #F8B88B
+
 );
 
 $body-bg:       $light;
 $body-color:    $dark;
 
+ /*   'Python': {backgroundColor: '#E6C75D' },
+    'Java': {backgroundColor: '#B08BBB' },
+    'JavaScript': {backgroundColor: '#F8B88B' },
+    'HTML/CSS': {backgroundColor: '#FD8A8A' },
+    'SQLite3': {backgroundColor: '#73D673'},
+    'React': {backgroundColor: '#B2CEFE'},
+    'Swing': {backgroundColor: '#32CACD'}
+*/
