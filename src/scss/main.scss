@@ -38,6 +38,12 @@ body {
     margin-top: 1em;
 }
 
+#project-card {
+    background-color: $accent-1;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    border: none;
+}
+
 
 @import './Home.scss';
 @import './Contact.scss';

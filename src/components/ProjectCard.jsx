@@ -1,10 +1,9 @@
-import React from 'react'
+import { Card, Button } from "react-bootstrap";
 
 import LinkIcon from '../assets/external-link.svg'
 
-import './ProjectCard.css'
 
-function ProjectCard({image, tags, title, srcLink, desc}) {
+function ProjectCard() {
   const tagBackgrounds = {
     'Python': {backgroundColor: '#E6C75D' },
     'Java': {backgroundColor: '#B08BBB' },
@@ -14,15 +13,8 @@ function ProjectCard({image, tags, title, srcLink, desc}) {
     'React': {backgroundColor: '#B2CEFE'},
     'Swing': {backgroundColor: '#32CACD'}
   }
-
-  return (
-    <div className='card'>
-      
-      <figure className='card-image'>
-        <img src={image} alt='personal programming project' />
-      </figure>
-      <div className='card-content'>
-        <div className='tags'> 
+/*
+    <div className='tags'> 
           {tags.map(tag => (
             <span 
               className='tag' 
@@ -31,15 +23,19 @@ function ProjectCard({image, tags, title, srcLink, desc}) {
             > {tag}</span>
           ))}
         </div>
-          
-        <h3 className='card-title'>{title}</h3>
-        <p className='card-description'>{desc}</p>
-        <a className='source-link' href={srcLink}>
-          Github
-          <img className='link-icon' src={LinkIcon}></img>
-        </a>
-      </div>
-    </div>
+*/
+
+  return (
+    <Card id="project-card" style={{ width: '18rem' }}>
+      <Card.Img variant="top" src="" />
+      <Card.Body>
+        <Card.Title>Card Title</Card.Title>
+        <Card.Text>
+          Some quick exmaple text to build on the card title and make up the bulk of the card's content. 
+        </Card.Text>
+        <Button variant="primary">Go somewhere</Button>
+      </Card.Body>
+    </Card>
   )
 }
 

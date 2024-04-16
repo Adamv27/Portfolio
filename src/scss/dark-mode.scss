@@ -4,7 +4,7 @@ html[darkmode] {
   $accent-2: #3C3C44;
 
   $theme-colors: (
-    "primary":    $primary,
+    "primary":    #AFF0A5,
     "accent-1":   $accent-1,
   );
 
@@ -62,5 +62,9 @@ html[darkmode] {
         background-color: $accent-2;
         border: none;
     }
+  }
+
+  #project-card {
+    background-color: $accent-1;
   }
 }
