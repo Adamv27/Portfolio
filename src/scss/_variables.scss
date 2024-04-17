@@ -16,18 +16,17 @@ $theme-colors: (
   "dark":       $dark,
   "python": #E6C75D,
   "java": #B08BBB,
-  "javascript": #F8B88B
-
+  "javascript": #B2CEFE,
+  "sql": #73D673,
+  "react": #32CACD,
+  "tailwind": #FD8A8A
 );
 
 $body-bg:       $light;
 $body-color:    $dark;
 
- /*   'Python': {backgroundColor: '#E6C75D' },
-    'Java': {backgroundColor: '#B08BBB' },
-    'JavaScript': {backgroundColor: '#F8B88B' },
-    'HTML/CSS': {backgroundColor: '#FD8A8A' },
-    'SQLite3': {backgroundColor: '#73D673'},
-    'React': {backgroundColor: '#B2CEFE'},
-    'Swing': {backgroundColor: '#32CACD'}
-*/
+ /*   'Python': {backgroundColor: '#E6C75D' }, 
+ 'Java': {backgroundColor: '#B08BBB' }, 
+ 'JavaScript': {backgroundColor: '#F8B88B' }, 
+ 'HTML/CSS': {backgroundColor: '#FD8A8A' }, 
+ 'SQLite3': {backgroundColor: '#73D673'}, 'React': {backgroundColor: '#B2CEFE'}, 'Swing': {backgroundColor: '#32CACD'} */

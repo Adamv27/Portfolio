@@ -12,49 +12,55 @@ import Terrain from "../assets/projects/terrain.png"
 
 const Projects = () => {
   return (
-    <Container>
+    <Container className='h-100 d-flex justify-content-center flex-wrap align-items-start'>
       <ProjectCard 
         title="Terrain Generator"
-        description="Built Feb. 2024"
+        description="An infinite terrain generator using simplex noise along with a writeup on the process. Built Feb. 2024"
         imageSrc={Terrain}
         githubUrl="https://github.com/Adamv27/terrain"
+        tags={["JavaScript"]}
       />
       <ProjectCard 
         title="Mp3 ID3 Editor"
         description="A site edit and save the title, artist, album, and cover art ID3 tags. Built Dec. 2023"
         imageSrc={Mp3}
         githubUrl="https://github.com/Adamv27/Mp3Editor"
+        tags={["React", "Tailwind"]}
       />
       <ProjectCard 
         title="Flavorful"
         description="A recipe finding app built on the spoonacular API. Flask backend was fully deployed on Google cloud. Built Nov. 2023"
         imageSrc={Flavorful}
         githubUrl="https://github.com/Adamv27/Flavorful"
+        tags={["JavaScript", "Python"]}
       />
       <ProjectCard 
         title="Sentry"
         description="A password manager in Java Swing designed with the MVC architecture. Built Apr. 2023"
         imageSrc={Sentry}
         githubUrl="https://github.com/Adamv27/Sentry"
+        tags={["Java", "SQL"]}
       />
       <ProjectCard 
         title="Stock Viewer"
         description="Stock price viewer using the financial modeling prep API and HTML canvas for a custom price graph. Built Dec. 2021"
         imageSrc={StockViewer}
         githubUrl="https://github.com/Adamv27/Stock-Viewer"
+        tags={["JavaScript"]}
       />
       <ProjectCard 
         title="Minesweeper"
         description="Classic 1989 version of minesweeper made with vanilla JavaScript. Built Dec. 2021"
         imageSrc={Minesweeper}
         githubUrl="https://github.com/Adamv27/Minesweeper-JS"
+        tags={["JavaScript"]}
       />
       <ProjectCard 
         title="Blackjack"
         description="Game of blackjack built using pygame with custom drag and drop mechanics. Built Nov. 2021"
         imageSrc={Blackjack}
         githubUrl="https://github.com/Adamv27/Blackjack"
-        tags={["Python", "Java"]}
+        tags={["Python"]}
       />
     </Container>
   )
