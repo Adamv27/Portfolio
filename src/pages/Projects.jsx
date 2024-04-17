@@ -5,15 +5,31 @@ import Minesweeper from "../assets/projects/minesweeper.png"
 import StockViewer from "../assets/projects/stock-viewer.png"
 import Blackjack from "../assets/projects/blackjack.png"
 import Sentry from "../assets/projects/sentry.png"
+import Flavorful from "../assets/projects/flavorful.png"
+import Mp3 from "../assets/projects/mp3.png"
+import Terrain from "../assets/projects/terrain.png"
+
 
 const Projects = () => {
   return (
     <Container>
       <ProjectCard 
-        title="Card Title"
-        description="Some quick exmaple text to build on the card title and make up the bulk of the card's content."
-        imageSrc={Minesweeper}
-        githubUrl=""
+        title="Terrain Generator"
+        description="Built Feb. 2024"
+        imageSrc={Terrain}
+        githubUrl="https://github.com/Adamv27/terrain"
+      />
+      <ProjectCard 
+        title="Mp3 ID3 Editor"
+        description="A site edit and save the title, artist, album, and cover art ID3 tags. Built Dec. 2023"
+        imageSrc={Mp3}
+        githubUrl="https://github.com/Adamv27/Mp3Editor"
+      />
+      <ProjectCard 
+        title="Flavorful"
+        description="A recipe finding app built on the spoonacular API. Flask backend was fully deployed on Google cloud. Built Nov. 2023"
+        imageSrc={Flavorful}
+        githubUrl="https://github.com/Adamv27/Flavorful"
       />
       <ProjectCard 
         title="Sentry"
