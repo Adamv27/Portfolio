@@ -1,7 +1,6 @@
-import { Container, Button, Image } from "react-bootstrap";
-import { Link } from "react-router-dom";
-
 import ComputerGraphic from '../assets/computer-image.svg'
+import { Container, Button, Image } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 
 
 const Home = () => {
