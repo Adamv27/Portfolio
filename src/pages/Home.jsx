@@ -1,6 +1,6 @@
-import Container from 'react-bootstrap/Container';
-import Button from 'react-bootstrap/Button';
-import Image from 'react-bootstrap/Image';
+import { Container, Button, Image } from "react-bootstrap";
+import { Link } from "react-router-dom";
+
 import ComputerGraphic from '../assets/computer-image.svg'
 
 
@@ -11,7 +11,7 @@ const Home = () => {
         <p className="home-text">Hi, I am</p>
         <h1 id="title" className="home-text">Adam Vinch</h1>
         <p className="home-text">Computer Science student and <br/>aspiring Software Developer</p>
-        <Button>See my work</Button>    
+        <Button as={Link} to="/projects">See my work</Button>    
       </div>
       <div className="content">
         <Image id="graphic" src={ComputerGraphic} />
