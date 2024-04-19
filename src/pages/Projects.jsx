@@ -8,16 +8,11 @@ import Sentry from "../assets/projects/sentry.png"
 import Flavorful from "../assets/projects/flavorful.png"
 import Mp3 from "../assets/projects/mp3.png"
 import Terrain from "../assets/projects/terrain.png"
-import Masonry, {ResponsiveMasonry} from "react-responsive-masonry"
 
 const Projects = () => {
   return (
-    <Container>
-    <ResponsiveMasonry
-      columnsCountBreakPoints={{350: 1, 750: 2, 900: 3}}
-    >
-      <Masonry>
-<ProjectCard 
+    <Container className="mt-5 d-flex justify-content-center flex-wrap">
+      <ProjectCard 
         title="Terrain Generator"
         description="An infinite terrain generator using simplex noise along with a writeup on the process. Built Feb. 2024"
         imageSrc={Terrain}
@@ -66,10 +61,7 @@ const Projects = () => {
         githubUrl="https://github.com/Adamv27/Blackjack"
         tags={["Python"]}
       />
-
-      </Masonry>
-    </ResponsiveMasonry>
-</Container> 
+    </Container> 
   )
 }
 
