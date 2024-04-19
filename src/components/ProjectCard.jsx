@@ -12,7 +12,7 @@ function ProjectCard({
   return (
     <Card id="project-card" style={{ width: '18rem' }}>
       <Card.Img variant="top" src={imageSrc} />
-      <Card.Body>
+      <Card.Body className="d-flex flex-column justify-content-around align-items-start">
         <Stack direction="horizontal" gap={1}>
           {tags && tags.map(tag => (
             <Badge 
@@ -21,7 +21,7 @@ function ProjectCard({
             >{tag}</Badge>
           ))}
         </Stack>
-        <Card.Title>{title}</Card.Title>
+        <Card.Title id="project-title">{title}</Card.Title>
         <Card.Text>{description}</Card.Text>
         <Button variant="primary" as="a" href={githubUrl}>GitHub</Button>
         {demoUrl && (

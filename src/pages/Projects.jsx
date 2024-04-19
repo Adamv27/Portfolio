@@ -9,10 +9,9 @@ import Flavorful from "../assets/projects/flavorful.png"
 import Mp3 from "../assets/projects/mp3.png"
 import Terrain from "../assets/projects/terrain.png"
 
-
 const Projects = () => {
   return (
-    <Container className='h-100 d-flex justify-content-center flex-wrap align-items-start'>
+    <Container className="mt-5 d-flex justify-content-center flex-wrap">
       <ProjectCard 
         title="Terrain Generator"
         description="An infinite terrain generator using simplex noise along with a writeup on the process. Built Feb. 2024"
@@ -62,7 +61,7 @@ const Projects = () => {
         githubUrl="https://github.com/Adamv27/Blackjack"
         tags={["Python"]}
       />
-    </Container>
+    </Container> 
   )
 }
 
