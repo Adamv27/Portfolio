@@ -1,10 +1,11 @@
 
+
 const About = () => {
-  return (
-    <div className='about-page'>
-      About
-    </div>
-  )
+	return (
+		<>
+			<p>About</p>
+		</>
+	)
 }
 
 export default About

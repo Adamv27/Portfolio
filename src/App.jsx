@@ -1,29 +1,32 @@
 import {
-  BrowserRouter as Router,
-  Routes,
+  createBrowserRouter,
+  createRoutesFromElements,
+  RouterProvider,
   Route,
-} from "react-router-dom";
+} from 'react-router-dom';
 
-import NavBar from './components/NavBar'
-import Home from './pages/Home'
-import About from "./pages/About"
-import Projects from "./pages/Projects";
-import Contact from "./pages/Contact";
-import { ThemeProvider } from "./hooks/useThemeContext";
+import Layout from './pages/Layout';
+import Home from './pages/Home';
+import About from './pages/About';
+import Contact from './pages/Contact';
+import Projects from './pages/Projects';
+
+
+const router = createBrowserRouter(
+  createRoutesFromElements(
+    <Route path='/' element={<Layout />}>
+      <Route index element={<Home />} />
+      <Route path='about' element={<About />} />
+      <Route path='projects' element={<Projects />} />
+      <Route path='contact' element={<Contact />} />
+    </Route>
+  )
+);
+
 
 const App = () => {
   return (
-    <ThemeProvider>
-      <Router>
-        <NavBar />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/projects" element={<Projects />} />
-          <Route path="/contact" element={<Contact />} />
-        </Routes>
-      </Router>
-    </ThemeProvider>
+    <RouterProvider router={router} />
   )
 }
 
