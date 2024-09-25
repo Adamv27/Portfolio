@@ -1,14 +1,21 @@
-import Cell from "./cell";
 import { MinQueue } from "heapify";
 
+
 const inBounds = (position) => {
-  return position.x >= 0 && position.x <= 100
-    && position.y >= 0 && position.y <= 80;
+  return position.x >= 0 && position.x <= 80
+    && position.y >= 0 && position.y <= 32;
 }
 
 
 const distance = (cell1, cell2) => {
-  return Math.sqrt((cell2.x - cell1.x) ** 2 + (cell2.y - cell1.y) ** 2);
+  let deltaX = Math.abs(cell2.x - cell1.x)
+  let deltaY = Math.abs(cell2.y - cell1.y)
+  return Math.max(deltaX, deltaY)
+  if (deltaX > deltaY) {
+    return 14 * deltaY + 10 * (deltaX - deltaY)
+  }
+  return 14 * deltaX + 10 * (deltaY - deltaX);
+  //return Math.sqrt((cell2.x - cell1.x) ** 2 + (cell2.y - cell1.y) ** 2);
 }
 
 const aStar = (start, target) => {
@@ -45,13 +52,9 @@ const aStar = (start, target) => {
   }
 
   while (current.hash !== start.hash) {
-    current.color = '#0000FF';
+    current.color = '#87CEFA';
     current = cameFrom[current.hash];
   }
-
-
-  console.log(visitedOrder);
-
 
   return visitedOrder;
 }

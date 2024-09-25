@@ -1,5 +1,5 @@
 class Cell {
-  constructor(x, y, color = '#895AD6') {
+  constructor(x, y, color = '#D6B4FC') {
     this.x = x;
     this.y = y;
     this.color = color;
@@ -11,7 +11,7 @@ class Cell {
 
   get neighbors() {
     const neighbors = [];
-    [[-1, 0], [1, 0], [0, 1], [0, -1]].forEach((offset) => {
+    [[-1, 0], [1, 0], [0, 1], [0, -1], [-1, -1], [1, 1], [1, -1], [-1, 1]].forEach((offset) => {
       neighbors.push(new Cell(this.x + offset[0], this.y + offset[1]))
     })
     return neighbors;

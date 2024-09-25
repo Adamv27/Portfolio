@@ -1,7 +1,6 @@
 import { Outlet } from 'react-router-dom';
 
 import NavBar from '../components/NavBar';
-import GridPattern from '../components/GridPattern';
 
 import "../styles/Layout.css";
 

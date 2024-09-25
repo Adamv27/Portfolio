@@ -2,6 +2,7 @@ import "../styles/Home.css";
 
 
 import PathFindingPattern from "../components/backgrounds/PathFinding";
+import Canvas from "../components/Canvas";
 
 const Home = () => {
 	return (
