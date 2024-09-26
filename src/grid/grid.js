@@ -1,5 +1,5 @@
-import { drawLine } from "./draw";
-import { GridNode } from "./pathFindingGrid";
+import { drawLine } from "../util/draw";
+import GridNode from "./gridNode";
 
 class Grid {
   constructor(dimensions, cellSize = 20) {
