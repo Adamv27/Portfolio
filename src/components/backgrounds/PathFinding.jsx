@@ -25,19 +25,16 @@ const PathFindingPattern = () => {
 	}
 
 	const draw = (ctx, frameCount) => {
+		grid.draw(ctx)
 		if (visited.length > 0) {
-			if (frameCount < visited.length - 1) {
-				grid.drawCell(ctx, visited[frameCount]);
-				grid.drawCell(ctx, visited[frameCount - 1])
+			const numCells = Math.min(frameCount, visited.length - 1)
+			for (let i = 0; i < numCells; i++) {
+				grid.drawCell(ctx, visited[i])
 			}
-			//const numCells = Math.min(frameCount, visited.length - 1)
-			//for (let i = 0; i < numCells; i++) {
-			//grid.drawCell(ctx, visited[numCells])
-			//}
 		}
 	}
 
-	return <Canvas draw={draw} setup={setup} predraw={predraw} />
+	return <Canvas draw={draw} />
 }
 
 export default PathFindingPattern
