@@ -1,6 +1,3 @@
-import { MinQueue } from "heapify";
-
-
 const inBounds = (position) => {
   return position.x >= 0 && position.x <= 80
     && position.y >= 0 && position.y <= 32;
@@ -10,18 +7,13 @@ const inBounds = (position) => {
 const distance = (cell1, cell2) => {
   let deltaX = Math.abs(cell2.x - cell1.x)
   let deltaY = Math.abs(cell2.y - cell1.y)
-  return Math.max(deltaX, deltaY)
-  if (deltaX > deltaY) {
-    return 14 * deltaY + 10 * (deltaX - deltaY)
-  }
-  return 14 * deltaX + 10 * (deltaY - deltaX);
-  //return Math.sqrt((cell2.x - cell1.x) ** 2 + (cell2.y - cell1.y) ** 2);
+  return deltaX + deltaY;
 }
-
+/*
 const aStar = (start, target) => {
-  const queue = new MinQueue(10000)
+  const visited = []
 
-  queue.push(0, 5)
+  //queue.push(0, 5)
   const visitedOrder = [start];
 
   const cameFrom = {};
@@ -32,7 +24,7 @@ const aStar = (start, target) => {
 
   let current;
   while (queue.size > 0) {
-    current = visitedOrder[queue.pop()];
+    //current = visitedOrder[queue.pop()];
 
     if (current.hash === target.hash) break;
 
@@ -43,7 +35,7 @@ const aStar = (start, target) => {
           cost.set(neighbor.hash, newCost);
           let priority = newCost + distance(target, neighbor);
 
-          queue.push(visitedOrder.length, priority);
+          //queue.push(visitedOrder.length, priority);
           visitedOrder.push(neighbor);
           cameFrom[neighbor.hash] = current;
         }
@@ -58,5 +50,4 @@ const aStar = (start, target) => {
 
   return visitedOrder;
 }
-
-export default aStar
+ */

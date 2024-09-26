@@ -1,48 +1,37 @@
 import { useEffect, useState } from "react";
 import useWindowSize from "../../hooks/useWindowSize";
-import aStar from "../../util/aStar";
-import Cell from "../../util/cell";
-import Grid from "../../util/grid";
 import Canvas from "../Canvas";
+import PathFindingGrid from "../../util/pathFindingGrid";
+import resizeCanvas from "../../util/draw";
 
 
 const PathFindingPattern = () => {
-	const [steps, setSteps] = useState(0);
-	const [visited, setVisisted] = useState(null);
+	const [visited, setVisited] = useState([]);
 
 	const dimensions = useWindowSize();
-	const grid = new Grid(dimensions)
-
-	const startingCell = new Cell(6, 8, "#FF0000")
-	const targetCell = new Cell(40, 25, "#00DD00")
+	const grid = new PathFindingGrid(dimensions)
 
 	useEffect(() => {
-		setVisisted(aStar(startingCell, targetCell));
+		setVisited(grid.findPath());
 	}, []);
 
-
-	useEffect(() => {
-		const interval = setInterval(() => {
-			setSteps(steps + 1);
-		}, 1)
-
-		return () => clearInterval(interval);
-	}, [steps])
-
+	const predraw = (context, canvas) => {
+		context.save()
+		resizeCanvas(canvas)
+	}
 
 	const draw = (ctx, frameCount) => {
 		grid.draw(ctx)
-		grid.drawCell(ctx, startingCell)
-		grid.drawCell(ctx, targetCell)
-		if (visited != null) {
-			const numCells = Math.min(steps, visited.length)
-			for (let i = 0; i < numCells; i++) {
-				grid.drawCell(ctx, visited[i])
-			}
+		if (visited.length > 0) {
+			const numCells = Math.min(frameCount, visited.length - 1)
+
+			//for (let i = 0; i < numCells; i++) {
+			grid.drawCell(ctx, visited[numCells])
+			//}
 		}
 	}
 
-	return <Canvas draw={draw} />
+	return <Canvas draw={draw} predraw={predraw} />
 }
 
 export default PathFindingPattern

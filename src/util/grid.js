@@ -1,10 +1,28 @@
 import { drawLine } from "./draw";
+import { GridNode } from "./pathFindingGrid";
 
 class Grid {
-  constructor(dimensions, cellSize = 40) {
+  constructor(dimensions, cellSize = 20) {
     this.rows = Math.floor(dimensions.height / cellSize);
     this.columns = Math.floor(dimensions.width / cellSize) + 1;
     this.cellSize = cellSize
+  }
+
+  cellIsInGrid(cell) {
+    return 0 <= cell.column && cell.column <= this.columns
+      && 0 <= cell.row && cell.row <= this.rows;
+  }
+
+  neighborsOf(cell) {
+    const neighbors = []
+    const offsets = [[-1, 0], [1, 0], [0, 1], [0, -1], [-1, -1], [1, 1], [1, -1], [-1, 1]];
+    offsets.forEach(([rowOffset, columnOffset]) => {
+      const neighbor = new GridNode(cell.row + rowOffset, cell.column + columnOffset);
+      if (this.cellIsInGrid(neighbor)) {
+        neighbors.push(neighbor);
+      }
+    });
+    return neighbors;
   }
 
   draw(ctx) {
@@ -23,8 +41,8 @@ class Grid {
   }
 
   drawCell(ctx, cell) {
-    let x = cell.x * this.cellSize;
-    let y = cell.y * this.cellSize;
+    let y = cell.row * this.cellSize;
+    let x = cell.column * this.cellSize;
     ctx.fillStyle = cell.color;
     ctx.fillRect(x, y, this.cellSize - 1, this.cellSize - 1);
   }
