@@ -70,11 +70,7 @@ class MinHeap {
   heapifyUp() {
     let index = this.heap.length - 1;
 
-    if (!this.hasParent(index)) return;
-    const parentScore = this.scoreFunction(this.parent(index));
-    const heapScore = this.scoreFunction(this.heap[index]);
-
-    while (this.hasParent(index) && parentScore > heapScore) {
+    while (this.hasParent(index) && this.scoreFunction(this.parent(index)) > this.scoreFunction(this.heap[index])) {
       this.swap(this.getParentIndex(index), index);
       index = this.getParentIndex(index);
     }
@@ -85,16 +81,10 @@ class MinHeap {
     while (this.hasLeftChild(index)) {
       let smallerChildIndex = this.getLeftChildIndex(index);
 
-      if (this.hasRightChild(index)) {
-        const rightScore = this.scoreFunction(this.rightChild(index));
-        const leftScore = this.scoreFunction(this.leftChild(index));
-        if (rightScore < leftScore) {
-          smallerChildIndex = this.getRightChildIndex(index);
-        }
+      if (this.hasRightChild(index) && this.scoreFunction(this.rightChild(index)) < this.scoreFunction(this.leftChild(index))) {
+        smallerChildIndex = this.getRightChildIndex(index);
       }
-      const heapScore = this.scoreFunction(this.heap[index])
-      const heapSmallChildScore = this.scoreFunction(this.heap[smallerChildIndex]);
-      if (heapScore < heapSmallChildScore) {
+      if (this.scoreFunction(this.heap[index]) < this.scoreFunction(this.heap[smallerChildIndex])) {
         break;
       } else {
         this.swap(index, smallerChildIndex);

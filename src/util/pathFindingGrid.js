@@ -1,4 +1,3 @@
-import { MinQueue } from "heapify";
 import Grid from "./grid";
 import MinHeap from "./minHeap";
 
@@ -20,8 +19,14 @@ class GridNode {
    * @param {GridNode} neighbor 
    */
   costFrom(cell) {
-    return Math.max(Math.abs(cell.column - this.column), Math.abs(cell.row - this.row))
-    //return Math.sqrt((this.column - cell.column) ** 2 + (this.row - cell.row) ** 2);
+    return Math.max(Math.abs(this.column - cell.column), Math.abs(this.row - cell.row));
+  }
+
+  /**
+   * @param {GridNode} cell 
+   */
+  isDiagonal(cell) {
+    return cell.row != this.row && cell.column != this.column;
   }
 }
 
@@ -29,7 +34,7 @@ class PathFindingGrid extends Grid {
   constructor(dimensions, cellSize = 20) {
     super(dimensions, cellSize)
 
-    this.target = new GridNode(this.rows - 2, this.columns - 2);
+    this.target = new GridNode(this.rows - 4, this.columns - 4);
     this.target.color = "#FF0000"
 
     this.start = new GridNode(4, 4);
@@ -53,26 +58,27 @@ class PathFindingGrid extends Grid {
     while (minHeap.size > 0) {
       current = minHeap.remove()
 
+      if (visited.has(current.hash)) {
+        continue;
+      }
+      visited.add(current.hash);
+      visitOrder.push(current)
+
       if (current.row == this.target.row && current.column == this.target.column) {
         return visitOrder;
       }
 
-      console.log(minHeap.peek());
-
-
-      visited.add(current.hash);
-      visitOrder.push(current)
-
 
       this.neighborsOf(current).forEach((neighbor) => {
-        if (!visited.has(neighbor.hash)) {
-          const g = current.g + neighbor.weight;
-          if (g < neighbor.g) {
-            cameFrom[neighbor.hash] = current;
-            neighbor.g = g;
-            neighbor.f = g + neighbor.costFrom(this.target);
+        let tentativeG = current.g + (neighbor.isDiagonal(current) ? neighbor.weight * 1.414 : neighbor.weight);
+
+        if (tentativeG < neighbor.g) {
+          cameFrom[neighbor.hash] = current;
+          neighbor.g = tentativeG;
+          neighbor.f = tentativeG + neighbor.costFrom(this.target);
+          if (!visited.has(neighbor.hash)) {
+            minHeap.add(neighbor);
           }
-          minHeap.add(neighbor);
         }
       })
     }

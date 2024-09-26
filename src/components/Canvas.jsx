@@ -2,7 +2,9 @@ import "../styles/Canvas.css";
 import useCanvas from "../hooks/useCanvas";
 import resizeCanvas from "../util/draw";
 
-const _postdraw = () => {
+
+const _setup = (context, canvas) => {
+
 }
 
 const _predraw = (context, canvas) => {
@@ -14,8 +16,8 @@ const _predraw = (context, canvas) => {
 
 const Canvas = props => {
 
-  const { draw, predraw = _predraw, postdraw = _postdraw, ...rest } = props
-  const canvasRef = useCanvas(draw, { postdraw, predraw })
+  const { draw, setup = _setup, predraw = _predraw, ...rest } = props
+  const canvasRef = useCanvas(draw, { setup, predraw })
 
   return <canvas className="canvas" ref={canvasRef} {...rest} />
 }
