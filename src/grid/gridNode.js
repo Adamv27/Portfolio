@@ -1,6 +1,6 @@
 
 class GridNode {
-  constructor(row, column, color = "#CDBDEB") {
+  constructor(row, column, color = "#A2D2FF") {
     this.row = row;
     this.column = column;
     this.color = color;

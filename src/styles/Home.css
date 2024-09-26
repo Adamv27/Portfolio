@@ -1,6 +1,5 @@
 #home-text {
     align-self: center;
-    position: relative;
     padding: 30px;
     background: rgba(255, 255, 255, 0.25);
     backdrop-filter: blur(30px);
