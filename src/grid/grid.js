@@ -3,7 +3,7 @@ import GridNode from "./gridNode";
 
 class Grid {
   constructor(dimensions, cellSize = 20) {
-    this.rows = Math.floor(dimensions.height / cellSize);
+    this.rows = Math.floor(dimensions.height / cellSize) + 1;
     this.columns = Math.floor(dimensions.width / cellSize) + 1;
     this.cellSize = cellSize
   }
