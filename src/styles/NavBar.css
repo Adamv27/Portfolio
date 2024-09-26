@@ -1,9 +1,15 @@
 #navbar {
+	margin-top: 1.5em;
 	display: flex;
-	justify-content: flex-end;
+	justify-content: space-between;
+	align-items: center;
+}
+
+img {
+	margin-left: 3em;
 }
 
 a {
-	margin: 2.5em 3em 0em 0em;
+	margin-right: 5em;
 	text-decoration: none;
 }
