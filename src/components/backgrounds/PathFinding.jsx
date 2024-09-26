@@ -1,8 +1,7 @@
 import { useEffect, useState } from "react";
 import useWindowSize from "../../hooks/useWindowSize";
 import Canvas from "../Canvas";
-import PathFindingGrid from "../../util/pathFindingGrid";
-import resizeCanvas from "../../util/draw";
+import PathFindingGrid from "../../grid/pathFindingGrid";
 
 
 const PathFindingPattern = () => {
@@ -13,16 +12,7 @@ const PathFindingPattern = () => {
 
 	useEffect(() => {
 		setVisited(grid.findPath());
-	}, []);
-
-	const setup = (context, canvas) => {
-		grid.draw(context);
-	}
-
-	const predraw = (context, canvas) => {
-		context.save();
-		resizeCanvas(canvas);
-	}
+	}, [dimensions]);
 
 	const draw = (ctx, frameCount) => {
 		grid.draw(ctx)
