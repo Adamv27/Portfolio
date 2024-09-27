@@ -1,0 +1,23 @@
+form {
+  width: 25em;
+  align-self: center;
+  display: flex;
+  flex-direction: column;
+  padding: 1.5em;
+
+  background: rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(30px);
+  border-radius: 15px;
+  color: black;
+}
+
+form>legend {
+  font-size: xx-large;
+}
+
+.contact-control {
+  border: 1px solid black;
+  border-radius: 8px;
+  margin: 0.25em;
+  padding: 1em;
+}

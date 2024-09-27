@@ -3,9 +3,7 @@ import useCanvas from "../hooks/useCanvas";
 import resizeCanvas from "../util/draw";
 
 
-const _setup = (context, canvas) => {
-
-}
+const _setup = (context, canvas) => { }
 
 const _predraw = (context, canvas) => {
   context.save()
