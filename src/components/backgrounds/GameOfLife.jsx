@@ -9,8 +9,6 @@ const GameOfLife = () => {
   const draw = (ctx, frameCount) => {
     grid.draw(ctx);
     grid.update(frameCount);
-
-
   }
 
   return <Canvas draw={draw} />
