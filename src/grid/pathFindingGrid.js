@@ -21,15 +21,13 @@ class PathFindingGrid extends Grid {
     );
     minHeap.add(this.start);
 
-    const cameFrom = {};
-
     const visited = new Set();
     const visitOrder = [];
 
     let current;
     while (minHeap.size > 0) {
       current = minHeap.remove()
-      
+
       if (visited.has(current.hash)) {
         continue;
       }
@@ -40,12 +38,11 @@ class PathFindingGrid extends Grid {
         return visitOrder;
       }
 
-
       this.neighborsOf(current).forEach((neighbor) => {
         let node = new PathFindingNode(neighbor.row, neighbor.column)
         let tentativeG = current.g + (node.isDiagonal(current) ? node.weight * 1.414 : node.weight);
         if (tentativeG < node.g) {
-          cameFrom[node.hash] = current;
+          node.cameFrom = current;
           node.g = tentativeG;
           node.f = tentativeG + node.costFrom(this.target);
           if (!visited.has(node.hash)) {
@@ -55,6 +52,16 @@ class PathFindingGrid extends Grid {
       })
     }
     return visitOrder;
+  }
+
+  cellsInBestPath(visitedCells) {
+    const bestPath = [];
+    let currentCell = visitedCells[visitedCells.length - 1];
+    while (currentCell.hash != this.start.hash) {
+      bestPath.push(currentCell);
+      currentCell = currentCell.cameFrom;
+    }
+    return bestPath.reverse();
   }
 
   draw(ctx) {
