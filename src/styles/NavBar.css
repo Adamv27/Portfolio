@@ -2,10 +2,8 @@
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-    background: rgba(255, 255, 255, 0.25);
-    backdrop-filter: blur(30px);
-    border-radius: 15px;
-
+	background: rgba(255, 255, 255, 0.25);
+	backdrop-filter: blur(30px);
 }
 
 img {
@@ -15,6 +13,6 @@ img {
 a {
 	margin-right: 4em;
 	text-decoration: none;
-  color: black;
-  font-size: medium;
+	color: black;
+	font-size: medium;
 }
