@@ -1,9 +1,10 @@
+import GameOfLife from "../components/backgrounds/GameOfLife"
 
 
 const Contact = () => {
 	return (
 		<>
-			<p>Contact</p>
+      <GameOfLife />
 		</>
 	)
 }
