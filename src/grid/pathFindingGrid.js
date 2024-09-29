@@ -1,6 +1,7 @@
 import Grid from "./grid";
 import MinHeap from "../util/minHeap";
 import PathFindingNode from "./pathFindingNode";
+import { newShade } from "../util/draw";
 
 class PathFindingGrid extends Grid {
   constructor(dimensions, cellSize = 20) {
@@ -13,6 +14,8 @@ class PathFindingGrid extends Grid {
     this.start.g = 0;
     this.start.f = 0;
     this.start.color = "#00FF00"
+
+    this.gradientCells = {};
   }
 
   findPath() {
@@ -64,10 +67,25 @@ class PathFindingGrid extends Grid {
     return bestPath.reverse();
   }
 
+  drawCell(ctx, cell) {
+    if (!(cell.hash in this.gradientCells)) {
+      const color = newShade(cell.color, -100);
+      this.gradientCells[cell.hash] = color;
+    }
+
+    const cellDefaultColor = "#A2D2FF";
+    const storedColor = this.gradientCells[cell.hash];
+    if (storedColor < cellDefaultColor) {
+      cell.color = storedColor;
+      this.gradientCells[cell.hash] = newShade(storedColor, 1);
+    }
+    super.drawCell(ctx, cell);
+  }
+
   draw(ctx) {
-    super.draw(ctx)
-    this.drawCell(ctx, this.start)
-    this.drawCell(ctx, this.target)
+    super.draw(ctx);
+    super.drawCell(ctx, this.start);
+    super.drawCell(ctx, this.target);
   }
 }
 
