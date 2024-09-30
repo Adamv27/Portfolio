@@ -16,3 +16,11 @@ a {
 	color: black;
 	font-size: medium;
 }
+
+
+#resume-button {
+  border: 1px solid black;
+  background-color: white;
+  border-radius: 8px;
+  padding: 5px 10px 5px 10px;
+}
