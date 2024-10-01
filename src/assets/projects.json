@@ -1,0 +1,20 @@
+{
+  "projects": [
+    {
+      "title": "Sentry",
+      "description": "Password manager built with Java Swing",
+      "technologies": [
+        "Java"
+      ]
+    },
+    {
+      "title": "Flavorful",
+      "description": "Full stack recipe app",
+      "technologies": [
+        "JavaScript",
+        "Python",
+        "PostgreSQL"
+      ]
+    }
+  ]
+}

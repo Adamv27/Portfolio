@@ -1,9 +1,16 @@
-
+import projectData from "../assets/projects.json";
+import ProjectCard from "../components/ProjectCard";
 
 const Projects = () => {
+
 	return (
 		<>
-			<p>Projects</p>
+			{projectData.projects.map((project) =>
+				<ProjectCard
+					key={project.title}
+					project={project}
+				/>
+			)}
 		</>
 	)
 }
