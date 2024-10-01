@@ -14,11 +14,11 @@ const NavBar = () => {
 			<div id="nav-links">
 				<Link to="projects">Projects</Link>
 				<Link to="contact">Contact</Link>
-        <a href={Resume} id='resume-link' target='_blank' without rel='noopener noreferrer'>Resume</a>
+				<a href={Resume} id='resume-link' target='_blank' rel='noopener noreferrer'>Resume</a>
 			</div>
-      <div id="nav-menu-button">
-        Menu 
-      </div>
+			<div id="nav-menu-button">
+				Menu
+			</div>
 		</nav>
 	)
 }

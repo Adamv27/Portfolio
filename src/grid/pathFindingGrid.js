@@ -21,12 +21,11 @@ class PathFindingGrid extends Grid {
 
   createWalls() {
     const walls = {};
-    for (let column = 0; column < this.columns; column++) {
-      if (Math.random() > 0.5) continue;
+    for (let column = 0; column < this.columns; column += 2) {
       const numWalls = randomInt(3, this.rows / 4);
       const rowStart = randomInt(this.start.row + 1, this.rows - numWalls - 5);
       for (let row = rowStart; row < rowStart + numWalls; row++) {
-        const wall = new PathFindingNode(row, column, 1, true);
+        let wall = new PathFindingNode(row, column, 1, true);
         wall.color = "#D8D8D8";
         walls[wall.hash] = wall;
       }
