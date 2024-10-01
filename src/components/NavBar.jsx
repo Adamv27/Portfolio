@@ -11,11 +11,14 @@ const NavBar = () => {
 			<Link to="/">
 				<img src={logo} width="50" height="50" />
 			</Link>
-			<div>
+			<div id="nav-links">
 				<Link to="projects">Projects</Link>
 				<Link to="contact">Contact</Link>
         <a href={Resume} id='resume-link' target='_blank' without rel='noopener noreferrer'>Resume</a>
 			</div>
+      <div id="nav-menu-button">
+        Menu 
+      </div>
 		</nav>
 	)
 }

@@ -17,10 +17,26 @@ a {
 	font-size: medium;
 }
 
-
-#resume-button {
+#resume-link {
   border: 1px solid black;
-  background-color: white;
   border-radius: 8px;
   padding: 5px 10px 5px 10px;
+}
+
+#nav-links {
+  display: none;
+}
+
+#nav-menu-button {
+  margin-right: 4em;
+}
+
+@media only screen and (min-width: 500px) {
+  #nav-links {
+    display: block;
+  }
+
+  #nav-menu-button {
+    display: none;
+  }
 }
