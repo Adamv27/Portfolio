@@ -3,17 +3,50 @@
     {
       "title": "Sentry",
       "description": "Password manager built with Java Swing",
+      "image": "sentry.png",
+      "github": "https://github.com/Adamv27/Sentry",
       "technologies": [
-        "Java"
+        "Java",
+        "SQL"
       ]
     },
     {
       "title": "Flavorful",
       "description": "Full stack recipe app",
+      "image": "flavorful.png",
+      "github": "https://github.com/Adamv27/Flavorful",
       "technologies": [
         "JavaScript",
-        "Python",
+        "FastAPI",
         "PostgreSQL"
+      ]
+    },
+    {
+      "title": "Terrain Generator",
+      "description": "An infinite terrain generator using simplex noise along with a writeup on the process. Built Feb. 2024",
+      "image": "terrain.png",
+      "github": "https://github.com/Adamv27/terrain",
+      "technologies": [
+        "JavaScript"
+      ]
+    },
+    {
+      "title": "Mp3 ID3 Editor",
+      "description": "A site to edit and save the title, artist, album, and cover art ID3 tags. Built Dec. 2023",
+      "image": "mp3.png",
+      "github": "https://github.com/Adamv27/Mp3Editor",
+      "technologies": [
+        "React",
+        "Tailwind"
+      ]
+    },
+    {
+      "title": "Stock Viewer",
+      "description": "Stock price viewer using the financial modeling prep API and HTML canvas for a custom price graph. Built Dec. 2021",
+      "image": "stockviewer.png",
+      "github": "https://github.com/Adamv27/Stock-Viewer",
+      "technologies": [
+        "JavaScript"
       ]
     }
   ]
