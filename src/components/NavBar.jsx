@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 
 import "../styles/NavBar.css";
 import logo from "../assets/logo.svg";
+import menuIcon from "../assets/menu-icon.svg";
 import Resume from "../assets/Adam_Vinch_Resume.pdf";
 
 const NavBar = () => {
@@ -16,9 +17,7 @@ const NavBar = () => {
 				<Link to="contact">Contact</Link>
 				<a href={Resume} id='resume-link' target='_blank' rel='noopener noreferrer'>Resume</a>
 			</div>
-			<div id="nav-menu-button">
-				Menu
-			</div>
+      <img id="nav-menu-button" src={menuIcon} />
 		</nav>
 	)
 }

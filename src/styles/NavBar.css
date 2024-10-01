@@ -7,7 +7,7 @@
 }
 
 img {
-	margin-left: 3em;
+	margin-left: 2em;
 }
 
 a {
@@ -28,10 +28,14 @@ a {
 }
 
 #nav-menu-button {
-  margin-right: 4em;
+  margin-right: 2em;
 }
 
 @media only screen and (min-width: 500px) {
+  img {
+    margin-left: 4em;
+  }
+
   #nav-links {
     display: block;
   }
