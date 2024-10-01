@@ -2,24 +2,31 @@ import { useEffect, useState } from "react";
 import useWindowSize from "../../hooks/useWindowSize";
 import Canvas from "../Canvas";
 import PathFindingGrid from "../../grid/pathFindingGrid";
-import { newShade } from "../../util/draw";
 
 
 const PathFindingPattern = () => {
 	const [visited, setVisited] = useState([]);
 	const [bestPath, setBestPath] = useState([]);
+	const [walls, setWalls] = useState([]);
 
 	const dimensions = useWindowSize();
 	const grid = new PathFindingGrid(dimensions)
 
 	useEffect(() => {
-		const path = grid.findPath();
+		const walls = grid.createWalls();
+		setWalls(walls);
+		const path = grid.findPath(walls);
 		setVisited(path);
 		setBestPath(grid.cellsInBestPath(path))
 	}, [dimensions]);
 
 	const draw = (ctx, frameCount) => {
 		grid.draw(ctx);
+
+		for (const hash of Object.keys(walls)) {
+			grid.drawCell(ctx, walls[hash]);
+		}
+
 		if (visited.length == 0) return;
 
 		let numCells = Math.min(frameCount, visited.length - 1);

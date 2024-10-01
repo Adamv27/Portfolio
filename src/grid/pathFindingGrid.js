@@ -2,6 +2,7 @@ import Grid from "./grid";
 import MinHeap from "../util/minHeap";
 import PathFindingNode from "./pathFindingNode";
 import { newShade } from "../util/draw";
+import randomInt from "../util/util";
 
 class PathFindingGrid extends Grid {
   constructor(dimensions, cellSize = 20) {
@@ -13,12 +14,27 @@ class PathFindingGrid extends Grid {
     this.start = new PathFindingNode(4, 4);
     this.start.g = 0;
     this.start.f = 0;
-    this.start.color = "#00FF00"
+    this.start.color = "#00FF00";
 
     this.gradientCells = {};
   }
 
-  findPath() {
+  createWalls() {
+    const walls = {};
+    for (let column = 0; column < this.columns; column++) {
+      if (Math.random() > 0.5) continue;
+      const numWalls = randomInt(3, this.rows / 4);
+      const rowStart = randomInt(this.start.row + 1, this.rows - numWalls - 5);
+      for (let row = rowStart; row < rowStart + numWalls; row++) {
+        const wall = new PathFindingNode(row, column, 1, true);
+        wall.color = "#D8D8D8";
+        walls[wall.hash] = wall;
+      }
+    }
+    return walls;
+  }
+
+  findPath(walls) {
     const minHeap = new MinHeap(
       (gridNode) => gridNode.f
     );
@@ -43,13 +59,15 @@ class PathFindingGrid extends Grid {
 
       this.neighborsOf(current).forEach((neighbor) => {
         let node = new PathFindingNode(neighbor.row, neighbor.column)
-        let tentativeG = current.g + (node.isDiagonal(current) ? node.weight * 1.414 : node.weight);
-        if (tentativeG < node.g) {
-          node.cameFrom = current;
-          node.g = tentativeG;
-          node.f = tentativeG + node.costFrom(this.target);
-          if (!visited.has(node.hash)) {
-            minHeap.add(node);
+        if (!(node.hash in walls)) {
+          let tentativeG = current.g + (node.isDiagonal(current) ? node.weight * 1.414 : node.weight);
+          if (tentativeG < node.g) {
+            node.cameFrom = current;
+            node.g = tentativeG;
+            node.f = tentativeG + node.costFrom(this.target);
+            if (!visited.has(node.hash)) {
+              minHeap.add(node);
+            }
           }
         }
       })
@@ -68,6 +86,11 @@ class PathFindingGrid extends Grid {
   }
 
   drawCell(ctx, cell) {
+    if (cell.isWall) {
+      super.drawCell(ctx, cell);
+      return;
+    }
+
     if (!(cell.hash in this.gradientCells)) {
       const color = newShade(cell.color, -100);
       this.gradientCells[cell.hash] = color;

@@ -18,7 +18,7 @@ class LifeGrid extends Grid {
   }
 
   update(frameCount) {
-    if (frameCount < 10 || frameCount % 10 !== 1) return;
+    if (frameCount < 20 || frameCount % 20 !== 1) return;
 
     const cellsToCreate = [];
     const cellsToDie = [];

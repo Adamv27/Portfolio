@@ -1,12 +1,13 @@
 import GridNode from "./gridNode";
 
 class PathFindingNode extends GridNode {
-  constructor(row, column, weight = 1) {
+  constructor(row, column, weight = 1, isWall = false) {
     super(row, column);
     this.weight = weight;
     this.g = Infinity;
     this.f = Infinity;
     this.cameFrom = null;
+    this.isWall = isWall;
   }
 
   /**
