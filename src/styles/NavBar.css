@@ -1,20 +1,20 @@
 #navbar {
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	background: rgba(255, 255, 255, 0.25);
-	backdrop-filter: blur(30px);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(30px);
 }
 
 img {
-	margin-left: 2em;
+  margin-left: 2em;
 }
 
 a {
-	margin-right: 4em;
-	text-decoration: none;
-	color: black;
-	font-size: medium;
+  margin-right: 4em;
+  text-decoration: none;
+  color: black;
+  font-size: medium;
 }
 
 #resume-link {
@@ -27,8 +27,20 @@ a {
   display: none;
 }
 
-#nav-menu-button {
+.nav-menu-icon {
+  top: 0.5em;
+  right: 0;
+  position: absolute;
   margin-right: 2em;
+  transition: opacity 0.25s ease-in-out;
+}
+
+.show {
+  opacity: 1;
+}
+
+.hide {
+  opacity: 0;
 }
 
 @media only screen and (min-width: 500px) {
@@ -40,7 +52,7 @@ a {
     display: block;
   }
 
-  #nav-menu-button {
+  #nav-menu {
     display: none;
   }
 }
