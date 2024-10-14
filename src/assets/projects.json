@@ -1,24 +1,24 @@
 {
   "projects": [
     {
-      "title": "Sentry",
-      "description": "Password manager built with Java Swing",
-      "image": "sentry.png",
-      "github": "https://github.com/Adamv27/Sentry",
+      "title": "Portfolio Website",
+      "description": "This website!",
+      "image": "portfolio.png",
+      "github": "https://github.com/Adamv27/Portfolio",
       "technologies": [
-        "Java",
-        "SQL"
+        "React.js"
       ]
     },
     {
       "title": "Flavorful",
-      "description": "Full stack recipe app",
+      "description": "Full stack recipe app, containerized and deployed with Google Cloud.",
       "image": "flavorful.png",
       "github": "https://github.com/Adamv27/Flavorful",
       "technologies": [
         "JavaScript",
         "FastAPI",
-        "PostgreSQL"
+        "PostgreSQL",
+        "Docker"
       ]
     },
     {
@@ -36,8 +36,18 @@
       "image": "mp3.png",
       "github": "https://github.com/Adamv27/Mp3Editor",
       "technologies": [
-        "React",
+        "React.js",
         "Tailwind"
+      ]
+    },
+    {
+      "title": "Sentry",
+      "description": "Password manager built with Java Swing",
+      "image": "sentry.png",
+      "github": "https://github.com/Adamv27/Sentry",
+      "technologies": [
+        "Java",
+        "SQL"
       ]
     },
     {

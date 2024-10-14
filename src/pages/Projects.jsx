@@ -8,7 +8,6 @@ const Projects = () => {
 
 	return (
 		<>
-			<GridPattern />
 			<div className="projects-grid">
 				{projectData.projects.map((project) =>
 					<ProjectCard
