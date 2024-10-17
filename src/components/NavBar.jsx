@@ -9,15 +9,16 @@ import Resume from "../assets/Adam_Vinch_Resume.pdf";
 
 const NavBar = () => {
 	const [isOpen, setIsOpen] = useState(false);
+    
 	return (
 		<nav id="navbar">
 			<div id="navbar-container">
 				<Link to="/">
-					<img id="logo" src={logo} width="50" height="50" />
+					<img id="logo" src={logo} onClick={() => setIsOpen(false)} width="50" height="50" />
 				</Link>
 				<div id="nav-links">
 					<Link to="projects">Projects</Link>
-					<Link to="contact">Contact</Link>
+					<Link to="contact" onClick={() => setIsOppen(false)}>Contact</Link>
 					<a href={Resume} id='resume-link' target='_blank' rel='noopener noreferrer'>Resume</a>
 				</div>
 			</div>
@@ -34,12 +35,10 @@ const NavBar = () => {
 					onClick={() => setIsOpen(!isOpen)}
 				/>
 				<div className={`nav-menu-links ${isOpen ? "show" : "hide"}`}>
-					<Link to="projects">Projects</Link>
-					<Link to="contact">Contact</Link>
+					<Link to="projects" onClick={() => setIsOpen(false)}>Projects</Link>
+					<Link to="contact" onClick={() => setIsOpen(false)}>Contact</Link>
 					<a href={Resume} id='resume-link' target='_blank' rel='noopener noreferrer'>Resume</a>
 				</div>
-
-
 			</div>
 		</nav >
 	)
