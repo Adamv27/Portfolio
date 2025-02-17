@@ -25,6 +25,17 @@ const ProjectCard = ({ project }) => {
         >
           GitHub
         </a>
+        
+        { project.live &&
+          <a
+            className="project-link"
+            href={project.live}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Live Site
+          </a>
+        }
       </div>
     </div>
   )

@@ -1,5 +1,4 @@
 import projectData from "../assets/projects.json";
-import GridPattern from "../components/backgrounds/GridPattern";
 import ProjectCard from "../components/ProjectCard";
 
 import "../styles/Projects.css";
